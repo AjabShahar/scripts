@@ -17,4 +17,5 @@ unzip ajabshahar.zip
 rm -f ajabshahar.zip
 
 cd ${dropwizard_root}
+java -jar platform-1.0-SNAPSHOT.jar db migrate development.yml
 nohup java -jar platform-1.0-SNAPSHOT.jar server development.yml > /dev/null &
