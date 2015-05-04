@@ -10,11 +10,7 @@ rm -f ${dropwizard_root}*
 cp ${project_root}/target/platform-1.0-SNAPSHOT.jar ${dropwizard_root}
 cp ${project_root}/development.yml ${dropwizard_root}
 
-rm -rf ${web_root}/ajabshahar/*
-cp -r ${project_root}/dist/ajabshahar.zip ${web_root}/ajabshahar/
-cd ${web_root}/ajabshahar
-unzip ajabshahar.zip
-rm -f ajabshahar.zip
+rsync -a --delete /projects/Ajab-Shahar-TW/web/app/ /var/www/ajabshahar
 
 cd ${dropwizard_root}
 java -jar platform-1.0-SNAPSHOT.jar db migrate development.yml
